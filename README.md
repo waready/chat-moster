@@ -5,12 +5,12 @@
 pequeño chat de repaso de vue and vuetify en firebase, firestore en desarrollo web
 ```
 
-### users
+### users:
 ``` 
 soliban@mail.com
 ```
 
-### pass
+### pass:
 ``` 
 123456
 ```
