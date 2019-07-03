@@ -1,4 +1,10 @@
-# moster-chat
+# moster-chatt 
+
+pequeño chat para repaso de vue and vuetify en firebase y firestore en desarrollo web
+##descripcion
+``` 
+pequeño chat para repaso de vue and vuetify en firebase y firestore en desarrollo web
+```
 
 ## Project setup
 ```
