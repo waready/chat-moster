@@ -1,9 +1,18 @@
 # moster-chatt 
 
-pequeño chat para repaso de vue and vuetify en firebase y firestore en desarrollo web
-##descripcion
+
 ``` 
-pequeño chat para repaso de vue and vuetify en firebase y firestore en desarrollo web
+pequeño chat de repaso de vue and vuetify en firebase, firestore en desarrollo web
+```
+
+### users:
+``` 
+soliban@mail.com
+```
+
+### pass:
+``` 
+123456
 ```
 
 ## Project setup
