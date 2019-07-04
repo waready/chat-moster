@@ -16,8 +16,8 @@
       </v-layout>
     </v-toolbar>
 
-    <v-content>
-      <v-container fluid fill-height>
+    <v-content >
+      <v-container fluid fill-height class="fondo" >
         <login v-if="!usuario" @onNotificacion='mostarNotificacion' @onIngresar='ingresar'/>
         <chat v-else :usuario="usuario" @onNotificacion='mostarNotificacion' ></chat>
       </v-container>
@@ -80,4 +80,7 @@ export default {
   .moster-fond{
     font-family: 'Gloria Hallelujah', cursive !important ; 
   }
+  .fondo{
+        background-color: #f1f1f1
+    }
 </style>

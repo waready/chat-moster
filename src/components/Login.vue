@@ -35,8 +35,8 @@ import {auth,db} from '@/firebase'
     export default {
         data(){
             return{
-                email:'',
-                password:''
+                email:'soliban@mail.com',
+                password:'123456'
             }
         },
         methods:{
