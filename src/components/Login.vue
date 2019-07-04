@@ -41,6 +41,15 @@ import {auth,db} from '@/firebase'
         },
         methods:{
             async ingresar(){
+                if(!this.email){
+                    this.enviarNotificacion('Deves colocar un email', 'warning')
+                    return
+                }
+                if(!this.email){
+                    this.enviarNotificacion('Deves colocar tu password', 'warning')
+                    return
+                }
+
                 try{
                     await auth.signInWithEmailAndPassword(this.email, this.password)
                     if(auth.currentUser){
@@ -50,12 +59,26 @@ import {auth,db} from '@/firebase'
                             let usuario = doc.data()
                             this.$emit('onIngresar',usuario)
                         }
+                        else {
+                            this.enviarNotificacion('no se encontro la informacion del usuario', 'error')
+                        }
                     }
                 }
-                catch{
-
+                catch(error){
+                    switch(error.code){
+                        case 'auth/user-not-found':
+                        case 'auth/wrong-password':
+                            this.enviarNotificacion('usuario no valido, revisa tu correro y contraseña', 'warning')
+                            break
+                        default:
+                            this.enviarNotificacion('Ocurrio un error verificando la informacion', 'error')
+                            break
+                    }
                 }
 
+            },
+            enviarNotificacion(mensaje,color){
+                this.$emit('onNotificacion',{mensaje,color})
             }
         }
     }

@@ -12,15 +12,23 @@
           <span class="ml-3 moster-fond" >
             {{usuario.nombre}}
           </span>
+          <v-btn class="moster-fond" flat small @click="usuario=null">Salir</v-btn>
       </v-layout>
     </v-toolbar>
 
     <v-content>
       <v-container fluid fill-height>
-        <login v-if="!usuario" @onIngresar='ingresar'/>
-        <chat v-else  ></chat>
+        <login v-if="!usuario" @onNotificacion='mostarNotificacion' @onIngresar='ingresar'/>
+        <chat v-else :usuario="usuario" @onNotificacion='mostarNotificacion' ></chat>
       </v-container>
     </v-content>
+
+    <v-snackbar v-model="notificacion.visible" :color="notificacion.color" multi-line top :timeout="6000" dark>
+      <span> {{notificacion.mensaje}}</span>
+      <v-btn color="white" flat @click="notificacion.visible = false">
+        Cerrar
+      </v-btn>
+    </v-snackbar>
 
     <v-footer color='primary' dark>
       <v-layout>
@@ -47,12 +55,22 @@ export default {
   data () {
     return {
       usuario: null,
+      notificacion: {
+        mensaje:'',
+        color:'info',
+        visible:false 
+      }
     }
   },
 
   methods:{
     ingresar(usuario){
       this.usuario = usuario
+    },
+    mostarNotificacion(notifica){
+      this.notificacion.mensaje = notifica.mensaje
+      this.notificacion.color = notifica.color
+      this.notificacion.visible = true
     }
   }
 }
