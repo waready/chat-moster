@@ -31,8 +31,8 @@
     </v-snackbar>
 
     <v-footer color='primary' dark>
-      <v-layout>
-        <span>
+      <v-layout justify-center align-center>
+        <span class="justify-center" >
           @Moster chat - Antony Japura - Desarrollo web
         </span>
       </v-layout>

@@ -9,11 +9,13 @@
                 </v-toolbar> 
                 <v-card-text>
                     <v-text-field
+                        autofocus
                         v-model="email"
                         label="Email"
                         id="id"
                     ></v-text-field>
                     <v-text-field
+                        @keyup.enter="ingresar()"
                         v-model="password"
                         label="¨Password"
                         id="id"
