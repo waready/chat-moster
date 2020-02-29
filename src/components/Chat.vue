@@ -36,7 +36,7 @@
         </v-flex>
         <v-flex xs12 sm8 lg8 v-if="mostrarChat" >
             <v-container fill-height class="pa-0 ma-0">
-                <v-layout align-end>
+                <v-layout >
                     <v-flex>
                         <v-card color="#f7faff" :class="mostrarLista ? 'ml-3' : 'ml-0'">
                             <v-toolbar color="primary" card dense dark>
